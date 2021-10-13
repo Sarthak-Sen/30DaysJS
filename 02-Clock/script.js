@@ -14,13 +14,17 @@ function setDate() {
   minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
 
   const hours = now.getHours();
-  const hourDegrees = (hours / 60) * 360 + 90;
+  const hourDegrees = (hours / 12) * 360 + 90;
   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
   if (seconds === 0) {
     secondHand.style.transition = "none";
+    minuteHand.style.transition = "none";
+    hourHand.style.transition = "none";
   } else {
     secondHand.style.transition = "";
+    minuteHand.style.transition = "";
+    hourHand.style.transition = "";
   }
 }
 
